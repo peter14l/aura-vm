@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura-VM | MicroVM for AI Agents</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mesh-bg"></div>
+    <nav>
+        <div class="logo">Aura-VM<span>.</span></div>
+        <div class="links">
+            <a href="https://github.com/peter14l/aura-vm" class="btn outline">View on GitHub</a>
+        </div>
+    </nav>
+    <header>
+        <div class="badge">Open Source Infrastructure</div>
+        <h1>Execute AI Code in <span class="gradient">5 Milliseconds.</span></h1>
+        <p>A hyper-fast, deeply isolated WebAssembly MicroVM built for AI Agent startups. Stop relying on slow Docker containers. Secure your host servers and execute untrusted code instantly.</p>
+        <div class="actions">
+            <a href="https://github.com/peter14l/aura-vm" class="btn primary">Start Building Securely</a>
+            <code>cargo add aura_vm</code>
+        </div>
+    </header>
+    <section class="features">
+        <div class="card">
+            <h3>⛽ Instruction Fuel Limits</h3>
+            <p>Prevents AI agents from locking up your CPU with infinite loops. Aura-VM force-kills the sandbox if the execution exceeds your strict fuel constraints.</p>
+        </div>
+        <div class="card">
+            <h3>🛡️ Memory Sandboxing</h3>
+            <p>Strict OOM (Out Of Memory) protection. Cap the WebAssembly memory footprint to exactly 10MB per instance to protect your host servers.</p>
+        </div>
+        <div class="card">
+            <h3>⚡ Millisecond Cold Starts</h3>
+            <p>Built purely in Rust using the Wasmtime engine. Boots, executes, and drops the isolated state environment in sub-5 milliseconds.</p>
+        </div>
+    </section>
+</body>
+</html>
