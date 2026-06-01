@@ -14,8 +14,19 @@ Aura-VM boots a completely isolated execution environment in **5 milliseconds**.
 1. **Fuel Consumption (Infinite Loop Protection):** The sandbox is allocated a strict "fuel" limit (e.g., 10,000 instructions). If the AI writes a `while(true)` loop, the VM instantly terminates the process without locking the CPU.
 2. **Memory Hard Limits (OOM Protection):** The AI is strictly capped at `10 MB` of RAM allocation. If it attempts to allocate a massive array, the VM traps the allocation and aborts.
 3. **Zero-State Ephemerality:** The exact millisecond the execution finishes (or fails), the `wasmtime::Store` drops, instantly wiping the memory completely clean. No lingering processes.
+4. **WASI Glass Wall:** WebAssembly System Interface (WASI) is enabled by default, allowing the AI to securely output logs (stdout) without ever gaining direct access to the host machine's OS or filesystem.
 
 ## Usage
+
+### As a Standalone CLI Engine
+
+You can run `aura-vm` directly from your terminal to execute an AI agent's compiled `.wasm` file:
+
+```bash
+cargo run -- --file target/wasm32-wasi/release/agent.wasm --function _start
+```
+
+### As an Embedded Library
 
 ```rust
 use aura_vm::AuraSandbox;
